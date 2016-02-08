@@ -6,29 +6,24 @@ class Car
     public $miles;
     public $image_path;
 
+    function __construct($car_model, $cost, $mileage, $image)
+    {
+        $this->make_model = $car_model;
+        $this->price = $cost;
+        $this->miles = $mileage;
+        $this->image_path = $image;
+    }
+
     function worthBuying($max_price)
     {
         return $this->price < $max_price;
     }
 }
 
-$tesla = new Car();
-$tesla->make_model = "2016 Tesla Model S";
-$tesla->price = 60000;
-$tesla->miles = 4000;
-$tesla->image_path = "img/teslaS.png";
 
-$fiat = new Car();
-$fiat->make_model = "1958 Fiat 600";
-$fiat->price = 10000;
-$fiat->miles = 9000;
-$fiat->image_path = "img/fiat600.png";
-
-$jeep = new Car();
-$jeep->make_model = "2006 Jeep Wrangler";
-$jeep->price = 8000;
-$jeep->miles = 120000;
-$jeep->image_path = "img/jeep-wrangler.png";
+$tesla = new Car("2016 Tesla Model S", 60000, 4000, "img/teslaS.png");
+$fiat = new Car("1958 Fiat 600", 1000, 9000, "img/fiat600.png");
+$jeep = new Car("2006 Jeep Wrangler", 8000, 12000, "img/jeep-wrangler.png");
 
 $cars = array($tesla, $fiat, $jeep);
 

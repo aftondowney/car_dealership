@@ -4,6 +4,11 @@ class Car
     public $make_model;
     public $price;
     public $miles;
+
+    function worthBuying($max_price)
+    {  //if True, return the object with a price less than max price
+        return $this->price < $max_price;
+    }
 }
 
 $tesla = new Car();
@@ -25,7 +30,7 @@ $cars = array($tesla, $fiat, $jeep);
 
 $cars_matching_search = array();
 foreach ($cars as $car) {
-    if ($car->price < $_GET["price"]) {
+    if ($car->worthBuying($_GET['price'])) { //Run worthBuying function on the $car object and use 'price' as $max_price. If true, push $car object(s) to new array
         array_push($cars_matching_search, $car);
     }
 }

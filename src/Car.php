@@ -60,6 +60,25 @@ class Car
     {
         return $this->price < $max_price;
     }
+
+    function save()
+    {
+        array_push($_SESSION['car-list'], $this);
+    }
+
+    static function getAll()
+    {
+        return $_SESSION['car-list'];
+    }
+
+
+    static function deleteAll()
+    {
+        $_SESSION['car-list'] = array();
+    }
+
+
+
 }
 
 ?>

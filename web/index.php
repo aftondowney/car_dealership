@@ -1,7 +1,4 @@
 <?php
-
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/../views'
-));
-
+    $website = require_once __DIR__.'/../app/app.php';
+    $website->run();
 ?>

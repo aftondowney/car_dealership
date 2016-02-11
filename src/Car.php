@@ -63,18 +63,18 @@ class Car
 
     function save()
     {
-        array_push($_SESSION['car-list'], $this);
+        array_push($_SESSION['car_list'], $this);
     }
 
     static function getAll()
     {
-        return $_SESSION['car-list'];
+        return $_SESSION['car_list'];
     }
 
 
     static function deleteAll()
     {
-        $_SESSION['car-list'] = array();
+        $_SESSION['car_list'] = array();
     }
 
 

@@ -15,7 +15,9 @@
             <p>Mileage: {{ car.getMileage }}</p>
         {% endfor %}
 
+        <form action="/clear_list" method="post"> 
         <button type="submit" class="btn btn-danger" name="delete">Clear All Listings</button>
+        </form>
     </div>
   </body>
 </html>

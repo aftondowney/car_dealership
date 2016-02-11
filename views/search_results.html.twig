@@ -8,18 +8,22 @@
   </head>
   <body>
     <div class="container">
-    <h1>Cars Posted</h1>
-        {% for car in cars %}
-            <p>Make and model: {{ car.getModel }}</p>
-            <p>Price: ${{ car.getPrice }}</p>
-            <p>Mileage: {{ car.getMileage }}</p>
-        {% endfor %}
+      <h1>Your search results!</h1>
 
-        <form action="/clear_list" method="post">
-        <button type="submit" class="btn btn-danger" name="delete">Clear All Listings</button>
-        </form>
 
-        <a href="/">Add another listing</a>
+      {% for car in cars %}
+
+          {% if car.getPrice < max_price %}
+              <p>Make and model: {{ car.getModel }}</p>
+              <p>Price: ${{ car.getPrice }}</p>
+              <p>Mileage: {{ car.getMileage }}</p>
+          {% endif %}
+
+      {% endfor %}
+
+
+
+      <p><a href="/car_list">View your car listing.</a></p>
     </div>
   </body>
 </html>

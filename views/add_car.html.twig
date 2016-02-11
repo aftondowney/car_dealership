@@ -8,23 +8,42 @@
   </head>
   <body>
     <div class="container">
-      <h1>List your car</h1>
-      <form class="form-group" action="/confirmation" method="post">
-        <fieldset>
-          <label for="car-make">Car Make:</label>
-          <input type="text" name="make_model">
-        </fieldset>
-        <fieldset>
-          <label for="price">Price:</label>
-          <input type="number" name="price">
-        </fieldset>
-        <fieldset>
-          <label for="miles">Mileage:</label>
-          <input type="text" name="miles">
-        </fieldset>
-        <button type="submit" name="button" class="btn btn-success">Submit</button>
+      <h1>Sparky's Cars</h1>
+      <h2>Looking for your next automobile?</h2>
+      <h3>You've come to the right place!</h3>
+      <div class="row">
 
-      </form>
+        <div class="col-sm-6">
+          <h2>List your car</h2>
+          <form action="/confirmation" method="post">
+            <div class="form-group">
+              <label for="car-make">Car Make:</label>
+              <input type="text" name="make_model">
+            </div>
+            <div class="form-group">
+              <label for="price">Price:</label>
+              <input type="number" name="price">
+            </div>
+            <div class="form-group">
+              <label for="miles">Mileage:</label>
+              <input type="text" name="miles">
+            </div>
+            <button type="submit" name="button" class="btn btn-success">Submit</button>
+          </form>
+
+        </div>
+        <div class="col-sm-6">
+          <h2>Find Your Car</h2>
+          <form action="/search_results" method="get">
+            <div class="form-group">
+              <label for="price">Enter Maximum price</label>
+              <input type="number" name="price" id="price">
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+          </form>
+
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -29,6 +29,10 @@
         return $app['twig']->render('car_list.html.twig', array('cars' => Car::getAll()));
     });
 
+    $app->get("/search_results", function() use ($app) {
+        return $app['twig']->render('search_results.html.twig', array('cars' => Car::getAll(), 'max_price' => $_GET['price']));
+    });
+
     $app->post("/clear_list", function() use ($app) {
       return $app['twig']->render('car_list.html.twig', array('cars'=> Car::deleteAll()));
     });

@@ -4,15 +4,15 @@ class Car
     private $make_model;
     private $price;
     private $miles;
-    private $image_path;
+    // private $image_path;
 
 
-    function __construct($car_model, $price, $mileage, $image)
+    function __construct($car_model, $price, $mileage)
     {
         $this->make_model = $car_model;
         $this->price = $price;
         $this->miles = $mileage;
-        $this->image_path = $image;
+        // $this->image_path = $image;
     }
 
     function setModel($car_model)
@@ -37,23 +37,23 @@ class Car
 
     function setMileage($mileage)
     {
-        $this->mileage = $mileage;
+        $this->miles = $mileage;
     }
 
     function getMileage()
     {
-        return $this->mileage;
+        return $this->miles;
     }
 
-    function setImage($car_image)
-    {
-        $this->image_path = $image;
-    }
-
-    function getImage()
-    {
-        return $this->image;
-    }
+    // function setImage($car_image)
+    // {
+    //     $this->image_path = $image;
+    // }
+    //
+    // function getImage()
+    // {
+    //     return $this->image_path;
+    // }
 
 
     function worthBuying($max_price)
